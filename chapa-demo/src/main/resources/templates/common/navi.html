@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	lang="ja">
+<body>
+	<nav th:fragment="global_nav" class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/login">chapa-demo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="nav-menu-4">
+				<ul class="nav navbar-nav">
+					<li>
+						<p class="navbar-btn" th:inline="text" th:if="${loginUser != null}">
+							<a href="/logout" class="btn btn btn-info">Log Out</a>
+						</p>
+					</li>
+					<li>
+						<p class="navbar-text" th:inline="text" th:if="${loginUser != null}">
+							<span class="glyphicon glyphicon-thumbs-up"></span> <span class="text-primary">[[${loginUser}]]</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>

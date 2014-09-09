@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	lang="ja">
+	<meta charset="UTF-8" />
+<head>
+<title>Spring Security Example</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+</head>
+<body>
+	<div th:substituteby="common/navi :: global_nav"></div>
+	<div id="header">
+		<div class="container col-md-3">
+			<h1 class="text-danger">403 Forbidden</h1>
+			<a href="/hello" class="btn btn-info btn-block">to home</a>
+		</div>
+	</div>
+</body>
+</html>

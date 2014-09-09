@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	lang="ja">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+<title>Spring Security Example</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+</head>
+<body>
+	<div th:substituteby="common/navi :: global_nav"></div>
+	<div class="container col-md-4"></div>
+	<div class="container col-md-4">
+		<form class="form-signin" name="login" th:action="@{/login}" method="post" role="form">
+			<h2 class="form-signin-heading">Please Login</h2>
+			<span class="text-danger" th:if="${param.error}"><b>username or password is wrong.</b></span>
+			<span class="text-success" th:if="${param.logout}">logged out.</span>
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" autocomplete="off" placeholder="username" />
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="password" name="password" autocomplete="off" placeholder="password" />
+			</div>
+			<div class="form-group">
+				<a href="javascript:document.login.submit();" class="btn btn-info btn-block">Log In</a>
+			</div>
+		</form>
+	</div>
+	<div class="container col-md-4"></div>
+
+</body>
+</html>

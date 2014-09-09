@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Hello World!</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+</head>
+<body>
+	<div th:substituteby="common/navi :: global_nav"></div>
+	<div class="container">
+		<h2>Please Seleced User's Page</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<form th:action="@{/admin}" method="post">
+						<input type="submit" class="btn btn-info btn-block" value="for admin" />
+					</form>
+				</div>
+				<div class="col-md-2">
+					<form th:action="@{/user}" method="post">
+						<input type="submit" class="btn btn-info btn-block" value="for user" />
+					</form>
+				</div>
+				<div class="col-md-2">
+					<form th:action="@{/guest}" method="post">
+						<input type="submit" class="btn btn-info btn-block" value="for guest" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
