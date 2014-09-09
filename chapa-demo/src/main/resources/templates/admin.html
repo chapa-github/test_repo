@@ -4,10 +4,7 @@
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
 <title>Admin Page</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+<div th:substituteby="common/meta :: meta"></div>
 </head>
 <body>
 	<div th:substituteby="common/navi :: global_nav"></div>
