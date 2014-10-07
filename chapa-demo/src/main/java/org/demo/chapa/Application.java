@@ -25,7 +25,6 @@ public class Application extends WebSecurityConfigurerAdapter {
 		SpringApplication.run(Application.class, args);
 	}
 
-
 	/*
 	 * ページに対しての認証周りの設定
 	 */
@@ -33,7 +32,7 @@ public class Application extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/login").permitAll()
-				.antMatchers("/admin").hasRole("ADMIN")
+				.antMatchers("/admin", "/metrics", "/health", "/dump", "/configprops", "/env").hasRole("ADMIN")
 					.and().authorizeRequests()
 				.antMatchers("/user").hasAnyRole("ADMIN", "USER")
 					.and().authorizeRequests()
@@ -57,7 +56,6 @@ public class Application extends WebSecurityConfigurerAdapter {
 		web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/api/**");
 	}
 
-
 	@Configuration
 	protected static class AuthenticationConfiguration extends
 			GlobalAuthenticationConfigurerAdapter {
@@ -71,7 +69,7 @@ public class Application extends WebSecurityConfigurerAdapter {
 				.roles("USER");
 
 			auth.inMemoryAuthentication()
-				.withUser("guest").password("test")
+				.withUser("guest").password("guest")
 				.roles("GUEST");
 
 			auth.inMemoryAuthentication()

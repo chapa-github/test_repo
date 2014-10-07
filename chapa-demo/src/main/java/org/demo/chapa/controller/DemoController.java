@@ -28,7 +28,7 @@ public class DemoController {
 	}
 
 	@RequestMapping(value = "admin")
-	public String doGetAdmin(Principal principal, Model m) {
+	public String doGetAdmin(Principal principal, Model m) throws Exception {
 		m.addAttribute("loginUser", principal.getName());
 		return "admin";
 	}
